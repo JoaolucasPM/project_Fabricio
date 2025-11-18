@@ -1,77 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-
-    <style>
-        body {
-            margin: 0;
-            overflow-x: hidden;
-            font-family: Arial, sans-serif;
-        }
-
-        section {
-            width: 100%;
-            height: 100vh; /* cada página ocupa a tela inteira */
-            padding: 0;
-            margin: 0;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
-
-        #rollButton {
-            position: fixed;
-            bottom: 25px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 14px 28px;
-            background: black;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 18px;
-            z-index: 1000;
-            opacity: 0.9;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Index — Site com iframes</title>
+  <style>
+    :root{--vh:100vh}
+    html,body{height:100%;margin:0;font-family:Arial, Helvetica, sans-serif;background:#000;color:#fff}
+    .section {height:100vh; width:100%; position:relative; overflow:hidden;}
+    iframe{width:100%; height:100%; border:0; display:block;}
+    /* botão flutuante para navegar (opcional) */
+    .rollBtn{position:fixed;right:20px;bottom:20px;padding:10px 14px;background:#d1ad6d;color:#000;border-radius:8px;border:0;cursor:pointer;z-index:999;}
+  </style>
 </head>
 <body>
 
-    <section id="sec1">
-        <iframe src="assets/HTML/pagina1.html"></iframe>
-    </section>
+  <div class="section"><iframe src="/assets/HTML/pagina1.html" title="Página 1"></iframe></div>
+  <div class="section"><iframe src="/assets/HTML/pagina2.html" title="Página 2"></iframe></div>
+  <div class="section"><iframe src="/assets/HTML/pagina3.html" title="Página 3"></iframe></div>
+  <div class="section"><iframe src="/assets/HTML/pagina4.html" title="Página 4"></iframe></div>
+  <div class="section"><iframe src="/assets/HTML/pagina5.html" title="Página 5"></iframe></div>
+  <div class="section"><iframe src="/assets/HTML/pagina6.html" title="Página 6"></iframe></div>
+  <div class="section"><iframe src="/assets/HTML/pagina7.html" title="Página 7"></iframe></div>
 
-    <section id="sec2">
-        <iframe src="assets/HTML/pagina2.html"></iframe>
-    </section>
+  <button class="rollBtn" id="nextBtn">Próxima seção</button>
 
-<!--     <section id="sec3">
-        <iframe src="pagina3.html"></iframe>
-    </section> -->
-
-    <button id="rollButton">Continuar ↓</button>
-
-    <script>
-        const pages = ["sec1", "sec2", "sec3"];
-        let currentPage = 0;
-
-        document.getElementById("rollButton").addEventListener("click", () => {
-            currentPage++;
-            if (currentPage >= pages.length) currentPage = 0;
-
-            document.getElementById(pages[currentPage]).scrollIntoView({
-                behavior: "smooth"
-            });
-        });
-    </script>
-
+  <script>
+    // botão simples que rola para a próxima seção do documento (não dentro do iframe)
+    const btn = document.getElementById('nextBtn');
+    btn.addEventListener('click', () => {
+      const sections = Array.from(document.querySelectorAll('.section'));
+      const top = window.scrollY;
+      let next = sections.find(s => s.offsetTop > top + 10);
+      if (!next) next = sections[0];
+      window.scrollTo({top: next.offsetTop, behavior: 'smooth'});
+    });
+  </script>
 </body>
 </html>

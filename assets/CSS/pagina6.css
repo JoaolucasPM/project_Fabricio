@@ -1,0 +1,42 @@
+/* Página 6 — Mentor */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#000;color:#fff}
+img{max-width:100%;height:auto}
+
+/* mentor title */
+.mentor-title{margin-top:120px;font-size:4rem;color:#d4af37;text-align:center;position:relative;margin-bottom:40px;letter-spacing:3px;font-weight:700}
+.mentor-title::after{content:"MENTOR";color:rgba(180,139,5,0.06);position:absolute;top:60%;left:50%;transform:translate(-50%,-70%);font-size:11rem;z-index:-1;font-weight:900}
+
+/* profile card */
+.container-11{width:90%;max-width:1200px;margin:0 auto;padding:20px}
+.profile-card{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;background:linear-gradient(180deg, rgba(42,42,42,0.9), rgba(12,12,12,0.9));border-radius:15px;padding:30px;position:relative;overflow:hidden}
+.profile-content{flex:1 1 500px;display:flex;flex-direction:column;gap:20px;position:relative;z-index:2}
+
+/* tags */
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tags a{display:flex;align-items:center;gap:5px;border:2px dashed #A6A6A6;background:rgba(0,0,0,0.2);padding:5px 10px;border-radius:20px;text-decoration:none;color:#fff;font-size:.85rem}
+
+/* mentor name & desc */
+.mentor-name{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;color:#d4af37}
+.mentor-description{font-size:clamp(0.9rem,2vw,1.1rem);line-height:1.6;color:#ccc}
+
+/* specialties */
+.specialties{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+.specialties li a{display:flex;align-items:center;gap:5px;border:2px dashed #A6A6A6;background:rgba(0,0,0,0.2);padding:5px 10px;border-radius:20px;text-decoration:none;color:#fff;font-size:.85rem}
+
+/* profile image */
+.profile-image{flex:1 1 380px;position:relative;display:flex;justify-content:flex-end;align-items:flex-start;overflow:visible;min-height:400px}
+.profile-image img{position:absolute;top:-10;right:0;height:130%;width:auto;object-fit:cover;display:block;z-index:1}
+
+/* responsive */
+@media(max-width:900px){
+  .profile-card{flex-direction:column;align-items:center;background:linear-gradient(179deg, rgba(0,0,0,0.3) 3.38%, #141414 99.16%), url('/assets/IMG/UC_fundo.jpg') center 17% / cover no-repeat;background-size:cover}
+  .profile-image{justify-content:center;margin-top:20px}
+  .profile-image img{position:relative;height:auto;max-width:80%}
+}
+@media(max-width:780px){
+  .mentor-title{font-size:5rem}
+  #img111{display:none}
+  .profile-image{display:none}
+  .mentor-title::after{font-size:5rem}
+}

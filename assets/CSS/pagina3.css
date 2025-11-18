@@ -1,0 +1,39 @@
+/* Página 3 — Galeria */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#000;color:#fff}
+img{max-width:100%;height:auto}
+
+.containerGaleriaPG3{display:flex;justify-content:center;width:100%}
+.containerPG3_P3{width:90%;max-width:1200px;margin:auto}
+
+/* links3 */
+.links3{margin-top:40px;display:flex;justify-content:center}
+.links3 a{display:flex;align-items:center;border:2px dashed #A6A6A6;background:linear-gradient(to top, rgba(0,0,0,0.2),transparent);backdrop-filter:blur(2px);border-radius:73px;color:white;padding:5px 10px;text-decoration:none;white-space:nowrap}
+.links3 a iconify-icon{margin-right:8px}
+
+/* title */
+#caixaPG3_P3 h1{ text-align:center;padding:30px;margin:auto;font-size:clamp(1.8rem,5vw,3.5rem);max-width:900px}
+#caixaPG3_P3 p{ text-align:center;padding:20px 30px;margin:auto;max-width:850px;font-size:clamp(1rem,2.4vw,1.4rem)}
+
+/* decoration */
+.decorationPG3_P3 img{width:clamp(50px,10vw,120px);margin:20px auto;display:block;opacity:.8}
+
+/* gallery lines */
+.linhaPG3_P3{display:flex;justify-content:center;gap:clamp(20px,3vw,35px);margin:40px 0}
+.linha-2colsPG3_P3{ /* uses flex layout so nothing else*/ }
+.linha-3colsPG3_P3{ /* handled by flex and wrapping if needed*/ }
+
+/* gallery item */
+.galleryItemPG3_P3{position:relative;overflow:hidden;border-radius:25px;border:1px solid #505050;background:linear-gradient(180deg,#2a2a2a 0%,#0c0c0c 100%);opacity:.9;transition:.3s;max-width:350px}
+.galleryItemPG3_P3:hover{transform:translateY(-6px);opacity:1}
+.galleryItemPG3_P3 img{width:100%;display:block}
+
+/* content */
+.galleryContentPG3_P3{padding:20px;text-align:center}
+.galleryContentPG3_P3 p{font-size:clamp(0.9rem,2vw,1.2rem);padding:10px;line-height:1.4}
+
+/* responsive */
+@media (max-width:900px){
+  .linhaPG3_P3{flex-direction:column;align-items:center}
+  .galleryItemPG3_P3{max-width:280px}
+}
