@@ -1,39 +1,283 @@
-/* Página 3 — Galeria */
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;background:#000;color:#fff}
-img{max-width:100%;height:auto}
+/* ---------------------------------------------
+   PÁGINA 3 — GALERIA
+---------------------------------------------- */
 
-.containerGaleriaPG3{display:flex;justify-content:center;width:100%}
-.containerPG3_P3{width:90%;max-width:1200px;margin:auto}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-/* links3 */
-.links3{margin-top:40px;display:flex;justify-content:center}
-.links3 a{display:flex;align-items:center;border:2px dashed #A6A6A6;background:linear-gradient(to top, rgba(0,0,0,0.2),transparent);backdrop-filter:blur(2px);border-radius:73px;color:white;padding:5px 10px;text-decoration:none;white-space:nowrap}
-.links3 a iconify-icon{margin-right:8px}
+body {
+  font-family: "Aeonik", Poppins, Arial, sans-serif;
+  background: #000;
+  color: #fff;
+}
 
-/* title */
-#caixaPG3_P3 h1{ text-align:center;padding:30px;margin:auto;font-size:clamp(1.8rem,5vw,3.5rem);max-width:900px}
-#caixaPG3_P3 p{ text-align:center;padding:20px 30px;margin:auto;max-width:850px;font-size:clamp(1rem,2.4vw,1.4rem)}
+img {
+  max-width: 100%;
+  height: auto;
+}
 
-/* decoration */
-.decorationPG3_P3 img{width:clamp(50px,10vw,120px);margin:20px auto;display:block;opacity:.8}
+/* Container geral */
+.containerGaleriaPG3 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
-/* gallery lines */
-.linhaPG3_P3{display:flex;justify-content:center;gap:clamp(20px,3vw,35px);margin:40px 0}
-.linha-2colsPG3_P3{ /* uses flex layout so nothing else*/ }
-.linha-3colsPG3_P3{ /* handled by flex and wrapping if needed*/ }
+#containerPG3_P3 {
+  text-align: center;
+  /* Centraliza o conteúdo */
+  max-width: 90%;
+  padding-bottom: clamp(30px, 4vh, 50px);
+}
 
-/* gallery item */
-.galleryItemPG3_P3{position:relative;overflow:hidden;border-radius:25px;border:1px solid #505050;background:linear-gradient(180deg,#2a2a2a 0%,#0c0c0c 100%);opacity:.9;transition:.3s;max-width:350px}
-.galleryItemPG3_P3:hover{transform:translateY(-6px);opacity:1}
-.galleryItemPG3_P3 img{width:100%;display:block}
 
-/* content */
-.galleryContentPG3_P3{padding:20px;text-align:center}
-.galleryContentPG3_P3 p{font-size:clamp(0.9rem,2vw,1.2rem);padding:10px;line-height:1.4}
 
-/* responsive */
-@media (max-width:900px){
-  .linhaPG3_P3{flex-direction:column;align-items:center}
-  .galleryItemPG3_P3{max-width:280px}
+/* ---------------------------------------------
+   LINKS (links3)
+---------------------------------------------- */
+.links3 {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+.btnPai {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.links3 a {
+  display: flex;
+  align-items: center;
+  border: 2px dashed #A6A6A6;
+  background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
+  backdrop-filter: blur(2px);
+  border-radius: 73px;
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.links3 a iconify-icon {
+  margin-right: 8px;
+}
+
+/* ---------------------------------------------
+   TÍTULO E TEXTO
+---------------------------------------------- */
+#caixaPG3_P3 h1 {
+  font-size: 3rem;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  white-space: normal;
+  max-width: 90%;  /* 🔥 força a quebra */
+  text-align: left;
+}
+
+#caixaPG3_P3 p {
+  font-size: 1.3rem;
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+  white-space: normal;
+  max-width: 90%;  /* 🔥 igual ao h1 */
+  text-align: left;
+}
+
+
+/* ---------------------------------------------
+   DECORAÇÃO
+---------------------------------------------- */
+.decorationPG3_P3 {
+  position: absolute;
+  
+  left: 80%;
+  top: 25%;
+  transform: translateY(-50%);
+  z-index: 1;
+  /* Garante que não sobreponha o conteúdo principal */
+}
+
+.decorationPG3_P3 img {
+
+  max-height: clamp(100px, 15vw, 150px);
+  object-fit: contain;
+}
+/* ---------------------------------------------
+   GRID DE GALERIA
+---------------------------------------------- */
+.linhaPG3_P3 {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+
+
+
+/* ---------------------------------------------
+   CARD DA GALERIA
+---------------------------------------------- */
+.galleryItemPG3_P3 {
+    position: relative;
+  height: 300px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(42, 42, 42, 0.9), rgba(12, 12, 12, 0.9));
+  border: 1px solid rgba(80, 80, 80, 0.5);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+}
+
+.galleryItemPG3_P3:hover {
+
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Imagem preenchendo a caixa */
+.galleryItemPG3_P3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      
+  object-position: center;
+  display: block;
+}
+
+/* ---------------------------------------------
+   TEXTO SOBRE A IMAGEM
+---------------------------------------------- */
+.galleryContentPG3_P3 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 25px 20px;
+  z-index: 2;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+backdrop-filter: blur(6px);
+  /* Alinhamento */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* Tamanho igual */
+  min-height: 120px; /* ajuste o valor */
+}
+
+
+.galleryContentPG3_P3 p {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  padding: 0;
+  color: #fff;
+}
+
+.btn-custom {
+  
+  background: linear-gradient(#d1ad6d, #ffc45c);
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  display: inline-block;
+  text-decoration: none
+}
+
+.btn-custom:hover {
+  background-color: #e76f51
+}
+
+
+
+/* ---------------------------------------------
+   RESPONSIVIDADE — APENAS ESTA PARTE
+---------------------------------------------- */
+
+/* 🔹 Até 1100px — mantém 2 colunas, mas com tamanhos mais fluidos */
+@media (max-width: 1100px) {
+  .linhaPG3_P3 {
+    gap: 15px;
+  }
+
+  .galleryItemPG3_P3 {
+    height: 320px;
+  }
+}
+
+/* 🔹 Até 900px — mantém 2 colunas, reduzindo larguras */
+@media (max-width: 900px) {
+  .linhaPG3_P3 {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .galleryItemPG3_P3 {
+    width: 45%;
+    height: 300px;
+    max-width: none;
+  }
+}
+
+/* 🔹 Até 700px — ainda tenta manter 2 colunas, mas mais estreitas */
+@media (max-width: 700px) {
+  .galleryItemPG3_P3 {
+    width: 47%;
+    height: 280px;
+  }
+  #img{
+    display: none;
+  }
+    #caixaPG3_P3 h1 , p{
+    margin: 0 auto;      /* Centraliza horizontalmente */
+    text-align: center;  /* Opcional: centraliza conteúdo interno */
+    display: block;      /* Garante que o margin auto funcione */
+  }
+
+  
+}
+
+/* 🔹 Até 600px — VIRA 1 COLUNA */
+@media (max-width: 600px) {
+  .linhaPG3_P3 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .galleryItemPG3_P3 {
+    width: 100%;
+    max-width: 320px;
+    height: 350px;
+  }
+
+  #caixaPG3_P3 h1 {
+    font-size: clamp(1.6rem, 7vw, 2.6rem);
+  }
+}
+
+/* 🔹 Até 430px — ajusta tamanho final */
+@media (max-width: 430px) {
+  .galleryItemPG3_P3 {
+    max-width: 280px;
+    height: 320px;
+  }
+
+  .galleryContentPG3_P3 {
+    padding: 20px 15px;
+    min-height: 100px;
+  }
+
+  .galleryContentPG3_P3 p {
+    font-size: 1rem;
+  }
 }

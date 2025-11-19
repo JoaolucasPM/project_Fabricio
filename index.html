@@ -4,37 +4,96 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Index — Site com iframes</title>
+
   <style>
-    :root{--vh:100vh}
-    html,body{height:100%;margin:0;font-family:Arial, Helvetica, sans-serif;background:#000;color:#fff}
-    .section {height:100vh; width:100%; position:relative; overflow:hidden;}
-    iframe{width:100%; height:100%; border:0; display:block;}
-    /* botão flutuante para navegar (opcional) */
-    .rollBtn{position:fixed;right:20px;bottom:20px;padding:10px 14px;background:#d1ad6d;color:#000;border-radius:8px;border:0;cursor:pointer;z-index:999;}
+    html,body{
+      margin:0;
+      padding:0;
+      background:#000;
+      color:#fff;
+      overflow-x:hidden;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    .section{
+      width:100%;
+      position:relative;
+      overflow:hidden;
+      min-height:100vh; /* seção mínima */
+    }
+
+    iframe{
+      width:100%;
+      border:0;
+      display:block;
+      overflow:hidden;
+      height:100vh; /* altura inicial */
+      transition:height .2s ease;
+    }
+
+    .rollBtn{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      padding:10px 14px;
+      background:#d1ad6d;
+      color:#000;
+      border-radius:8px;
+      border:0;
+      cursor:pointer;
+      z-index:999;
+    }
   </style>
 </head>
 <body>
 
-  <div class="section"><iframe src="/assets/HTML/pagina1.html" title="Página 1"></iframe></div>
-  <div class="section"><iframe src="/assets/HTML/pagina2.html" title="Página 2"></iframe></div>
-  <div class="section"><iframe src="/assets/HTML/pagina3.html" title="Página 3"></iframe></div>
-  <div class="section"><iframe src="/assets/HTML/pagina4.html" title="Página 4"></iframe></div>
-  <div class="section"><iframe src="/assets/HTML/pagina5.html" title="Página 5"></iframe></div>
-  <div class="section"><iframe src="/assets/HTML/pagina6.html" title="Página 6"></iframe></div>
-  <div class="section"><iframe src="/assets/HTML/pagina7.html" title="Página 7"></iframe></div>
+  <div class="section"><iframe src="/assets/HTML/pagina1.html"></iframe></div>
+  <div class="section"><iframe src="/assets/HTML/pagina2.html"></iframe></div>
+  <div class="section"><iframe src="/assets/HTML/pagina3.html"></iframe></div>
+  <div class="section"><iframe src="/assets/HTML/pagina4.html"></iframe></div>
+  <div class="section"><iframe src="/assets/HTML/pagina5.html"></iframe></div>
+  <div class="section"><iframe src="/assets/HTML/pagina6.html"></iframe></div>
+  <div class="section"><iframe src="/assets/HTML/pagina7.html"></iframe></div>
 
   <button class="rollBtn" id="nextBtn">Próxima seção</button>
 
   <script>
-    // botão simples que rola para a próxima seção do documento (não dentro do iframe)
+    // Auto–ajuste de altura dos iframes
+    function ajustaAlturaIframe(ifr) {
+      try {
+        const doc = ifr.contentDocument || ifr.contentWindow.document;
+        const altura = Math.max(
+          doc.body.scrollHeight,
+          doc.documentElement.scrollHeight
+        );
+        ifr.style.height = altura + "px";
+      } catch (e) {
+        console.log("Erro iframe:", e);
+      }
+    }
+
+    // Ajusta altura ao carregar cada iframe
+    document.querySelectorAll("iframe").forEach(iframe => {
+      iframe.addEventListener("load", () => {
+        ajustaAlturaIframe(iframe);
+      });
+    });
+
+    // Ajusta se a janela for redimensionada
+    window.addEventListener("resize", () => {
+      document.querySelectorAll("iframe").forEach(ajustaAlturaIframe);
+    });
+
+    // Botão próxima seção (igual ao seu)
     const btn = document.getElementById('nextBtn');
     btn.addEventListener('click', () => {
-      const sections = Array.from(document.querySelectorAll('.section'));
+      const secs = [...document.querySelectorAll('.section')];
       const top = window.scrollY;
-      let next = sections.find(s => s.offsetTop > top + 10);
-      if (!next) next = sections[0];
-      window.scrollTo({top: next.offsetTop, behavior: 'smooth'});
+      let next = secs.find(s => s.offsetTop > top + 10);
+      if (!next) next = secs[0];
+      window.scrollTo({top: next.offsetTop, behavior:'smooth'});
     });
   </script>
+
 </body>
 </html>

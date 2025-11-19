@@ -1,42 +1,194 @@
-/* Página 1 */
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Aeonik', Poppins, Arial, sans-serif;background:linear-gradient(to right,#000,#141414);min-height:100vh;color:#fff}
-img{max-width:100%;height:auto}
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
 
-/* Hero / background */
-.bg-image{
-  background: linear-gradient(179deg, rgba(0,0,0,0.3) 3.38%, #141414 99.16%),
-    url('https://raw.githubusercontent.com/JoaolucasPM/Lp_Fabricio/main/assets/IMG/HeroDESKTOP.png') center 17%/cover no-repeat fixed;
-  background-size:cover;height:100vh;position:relative;color:#fff;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
 }
 
-.overlay-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;max-width:1200px;padding:0 20px}
-.content-wrapper{margin-top:30%;display:flex;justify-content:space-between;align-items:stretch;gap:70px}
-.content-wrapper>*{flex:1}
+body {
+  font-family: 'Aeonik', Poppins, Arial, sans-serif;
+  background: linear-gradient(to right, #000, #141414);
+  min-height: 100vh;
 
-.left-side{text-align:left;width:45%}
-.right-side{text-align:justify}
+}
 
-.links{margin-top:3px;display:flex;flex-wrap:nowrap;gap:10px;justify-content:space-between;width:100%;overflow:hidden}
-.links a{text-transform:uppercase;display:flex;align-items:center;justify-content:center;border:2px dashed #A6A6A6;background:linear-gradient(to top, rgba(0,0,0,0.2),transparent);backdrop-filter:blur(2px);border-radius:73px;color:white;padding:5px 10px;text-decoration:none;white-space:nowrap;flex:1;font-size:10px}
-.links a iconify-icon{margin-right:8px}
 
-.display-1{width:100%;display:block;text-align:start;line-height:1;margin:0;padding:0}
-.lead{padding-bottom:40px;margin-bottom:20px;text-align:start;font-size:1.3rem}
-.btn-custom{background:linear-gradient(#d1ad6d,#ffc45c);color:#000;border:none;border-radius:5px;padding:10px 20px;display:inline-block;text-decoration:none}
-.btn-custom:hover{background-color:#e76f51}
+img {
+  max-width: 100%;
+  height: auto
+}
 
-.pe-3{position:absolute;top:40px;right:50px}
-.text-end img{height:40px}
+/* Regras gerais para h1, h2, p (exceto o #colorTextPG4_P4) */
+h1,
+h2{
+  font-weight: 400;
+  background: linear-gradient(to right, #fff, #999);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 5vw, 4.25rem);
+}
+
+p {
+
+  padding-bottom: 40px;
+  margin-bottom: 20px;
+  text-align: start;
+  font-size: 1.5rem
+}
+
+
+
+/* Hero / background */
+.bg-image {
+  background: linear-gradient(179deg, rgba(0, 0, 0, 0.3) 3.38%, #141414 99.16%),
+    url('https://raw.githubusercontent.com/JoaolucasPM/Lp_Fabricio/main/assets/IMG/HeroDESKTOP.png') center 17%/cover no-repeat fixed;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  color: #fff;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px
+}
+
+.content-wrapper {
+  margin-top: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 70px
+}
+
+.content-wrapper>* {
+  flex: 1
+}
+
+.left-side {
+  text-align: left;
+  width: 45%
+}
+
+.right-side {
+  text-align: justify
+}
+
+.links {
+  padding-bottom: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden
+}
+
+.links a {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #A6A6A6;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent);
+  backdrop-filter: blur(2px);
+  border-radius: 73px;
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex: 1;
+  font-size: 12px;
+}
+
+.links a iconify-icon {
+  margin-right: 8px
+}
+
+.display-1 {
+  width: 100%;
+  display: block;
+  text-align: start;
+  line-height: 1;
+  margin: 0;
+  padding: 0
+}
+
+
+
+.btn-custom {
+  background: linear-gradient(#d1ad6d, #ffc45c);
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  display: inline-block;
+  text-decoration: none
+}
+
+.btn-custom:hover {
+  background-color: #e76f51
+}
+
+.pe-3 {
+  position: absolute;
+  top: 40px;
+  right: 50px
+}
+
+.text-end img {
+  height: 40px
+}
 
 /* Responsividade */
-@media (max-width:768px){
-  .bg-image{background:linear-gradient(179deg, rgba(0,0,0,0.3) 3.38%, #141414 99.16%), url('https://raw.githubusercontent.com/JoaolucasPM/Lp_Fabricio/main/assets/IMG/HeroMobile.png') center 17%/cover no-repeat fixed}
-  .content-wrapper{flex-direction:column;align-items:center;text-align:center;margin-top:70%}
-  .left-side,.right-side{width:100%;text-align:center}
-  .links{margin-bottom:15px;gap:8px}
-  .links a{font-size:7px;padding:2px 5px}
-  .lead{text-align:center;font-size:1.1rem;padding:0}
-  .display-1{text-align:center}
-  .pe-3{right:5%}
+@media (max-width:768px) {
+  .bg-image {
+    background: linear-gradient(179deg, rgba(0, 0, 0, 0.3) 3.38%, #141414 99.16%), url('https://raw.githubusercontent.com/JoaolucasPM/Lp_Fabricio/main/assets/IMG/HeroMobile.png') center 17%/cover no-repeat fixed
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 70%
+  }
+
+  .left-side,
+  .right-side {
+    width: 100%;
+    text-align: center
+  }
+
+  .links {
+    margin-bottom: 15px;
+    gap: 8px
+  }
+
+  .links a {
+    font-size: 7px;
+    padding: 2px 5px
+  }
+
+  p {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 0
+  }
+
+  .display-1 {
+    text-align: center
+  }
+
+  .pe-3 {
+    right: 5%
+  }
 }

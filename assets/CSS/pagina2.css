@@ -1,31 +1,182 @@
 /* Página 2 (cards) */
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;background:#000;color:#fff}
-img{max-width:100%;height:auto}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+body {
+  font-family: 'Aeonik', Poppins, Arial, sans-serif;
+  background: linear-gradient(to right, #000, #141414);
+  background: #000;
+  color: #fff;
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto
+}
+/* Regras gerais para h1, h2, p (exceto o #colorTextPG4_P4) */
+h1,
+h2,
+p{
+  font-weight: 400;
+  background: linear-gradient(to right, #fff, #999);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 5vw, 4.25rem);
+}
+
+p {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  text-align: start;
+  font-size: 2rem
+}
+
 
 /* Title and intro */
-#caixaPG2_P2 h1{ text-align:center;padding:30px;margin:auto;max-width:955px;white-space:normal }
-#caixaPG2_P2 p{ text-align:center;padding:30px;margin:auto }
+#caixaPG2_P2 h1 {
+  text-align: center;
+  padding: 30px;
+  margin: auto;
+  max-width: 955px;
+  white-space: normal
+}
+
+#caixaPG2_P2 p {
+  text-align: center;
+  padding: 30px;
+  margin: auto
+}
 
 /* links2 */
-.links2{margin-top:40px;display:flex;flex-wrap:nowrap;gap:10px;justify-content:center}
-.links2 a{display:flex;align-items:center;border:2px dashed #A6A6A6;background:linear-gradient(to top, rgba(0,0,0,0.2),transparent);backdrop-filter:blur(2px);border-radius:73px;color:white;padding:5px 10px;text-decoration:none;white-space:nowrap}
-.links2 a iconify-icon{margin-right:8px}
+.links2 {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  justify-content: center
+}
+
+.links2 a {
+  display: flex;
+  align-items: center;
+  border: 2px dashed #A6A6A6;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent);
+  backdrop-filter: blur(2px);
+  border-radius: 73px;
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  white-space: nowrap
+}
+
+.links2 a iconify-icon {
+  margin-right: 8px
+}
 
 /* Cards */
-.containerPG2_P2{display:flex;justify-content:center;flex-wrap:nowrap;gap:clamp(15px,2vw,20px);width:90%;max-width:1100px;margin:0 auto;padding-bottom:clamp(50px,5vh,70px)}
-.cardPG2_P2{flex:1 1 clamp(250px,30vw,320px);background:linear-gradient(180deg,#2a2a2a 0%,#0c0c0c 100%);opacity:0.7;border:1px solid #505050;border-radius:30px;padding:clamp(20px,3vw,40px) clamp(15px,2vw,30px);display:flex;flex-direction:column;align-items:center;transition:transform .3s}
-.cardPG2_P2:hover{transform:translateY(-8px);opacity:0.85}
+.containerPG2_P2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: clamp(15px, 2vw, 20px);
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-bottom: clamp(50px, 5vh, 70px)
+}
 
-.imgBoxPG2_P2 img{max-width:clamp(10px,8vw,59px)}
-.contentBoxPG2_P2{text-align:center;gap:5px}
-.contentBoxPG2_P2 h2{font-size:clamp(1.2rem,2.5vw,1.4em);letter-spacing:2px;padding-bottom:10px}
-.contentBoxPG2_P2 p{font-size:clamp(0.85rem,2vw,0.95em)}
+.cardPG2_P2 {
+  width: clamp(280px, 28vw, 320px);
+  flex: 0 0 clamp(280px, 28vw, 320px); /* todos iguais */
+  background: linear-gradient(180deg, #2a2a2a 0%, #0c0c0c 100%);
+  opacity: 0.7;
+  border: 1px solid #505050;
+  border-radius: 30px;
+  padding: clamp(20px, 3vw, 40px) clamp(15px, 2vw, 30px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform .3s
+}
 
-#imgPG2_P2 img{width:clamp(70px,12vw,130px);margin:0 auto;display:block}
+.cardPG2_P2:hover {
+  transform: translateY(-8px);
+  opacity: 0.85
+}
+
+.imgBoxPG2_P2 img {
+  max-width: clamp(10px, 8vw, 59px)
+}
+
+.contentBoxPG2_P2 {
+  text-align: center;
+  gap: 5px
+}
+
+.contentBoxPG2_P2 h2 {
+  font-size: clamp(1.2rem, 2.5vw, 1.4em);
+  letter-spacing: 2px;
+  padding-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.6rem;
+}
+
+.contentBoxPG2_P2 p {
+  font-size: 1.2rem;
+}
+
+#imgPG2_P2 img {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
 
 /* Responsividade */
-@media (max-width:768px){
-  .containerPG2_P2{flex-direction:column;align-items:center}
-  .cardPG2_P2{flex:1 1 100%;max-width:195px}
+@media (max-width:768px) {
+  .containerPG2_P2 {
+    flex-direction: column;
+    align-items: center
+  }
+
+  .cardPG2_P2 {
+   width: clamp(280px, 28vw, 320px);
+  flex: 0 0 clamp(280px, 28vw, 320px); /* todos iguais */
+  background: linear-gradient(180deg, #2a2a2a 0%, #0c0c0c 100%);
+  opacity: 0.7;
+  border: 1px solid #505050;
+  border-radius: 30px;
+  padding: clamp(20px, 3vw, 40px) clamp(15px, 2vw, 30px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform .3s
+  
+  }
+   .contentBoxPG2_P2 h2 {
+  font-size: clamp(1.2rem, 2.5vw, 1.4em);
+  letter-spacing: 2px;
+  padding-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.3rem;
+}
+.contentBoxPG2_P2 p {
+  padding-top: 20px;
+  font-size: 1.2rem;
+  justify-content: center;
+  display: flex;
+}
+  
+
+
 }
