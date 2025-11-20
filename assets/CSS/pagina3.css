@@ -18,15 +18,38 @@ img {
   max-width: 100%;
   height: auto;
 }
+h1,
+h2,
+p{
+  font-weight: 400;
+  background: linear-gradient(to right, #fff, #999);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 5vw, 4.25rem);
+}
+
+p {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  text-align: start;
+  font-size: 2rem
+}
+
+
 
 /* Container geral */
 .containerGaleriaPG3 {
+  
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
 #containerPG3_P3 {
+  
   text-align: center;
   /* Centraliza o conteúdo */
   max-width: 90%;
@@ -71,21 +94,24 @@ img {
    TÍTULO E TEXTO
 ---------------------------------------------- */
 #caixaPG3_P3 h1 {
-  font-size: 3rem;
+   font-size: 4.25rem;
   padding-top: 30px;
   padding-bottom: 30px;
   white-space: normal;
-  max-width: 90%;  /* 🔥 força a quebra */
+  max-width: 75%;  /* 🔥 força a quebra */
   text-align: left;
+  
+  margin: 0 auto;
 }
 
 #caixaPG3_P3 p {
-  font-size: 1.3rem;
+  margin: 0 auto;
+  font-size: 1.5rem;
 
   padding-top: 30px;
   padding-bottom: 30px;
   white-space: normal;
-  max-width: 90%;  /* 🔥 igual ao h1 */
+  max-width: 75%;  /* 🔥 igual ao h1 */
   text-align: left;
 }
 
@@ -97,7 +123,7 @@ img {
   position: absolute;
   
   left: 80%;
-  top: 25%;
+  top: 15%;
   transform: translateY(-50%);
   z-index: 1;
   /* Garante que não sobreponha o conteúdo principal */
@@ -114,8 +140,8 @@ img {
 .linhaPG3_P3 {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin: 10px 0;
+  gap: 5px;
+  margin: 5px 0;
 }
 
 
@@ -158,6 +184,7 @@ img {
    TEXTO SOBRE A IMAGEM
 ---------------------------------------------- */
 .galleryContentPG3_P3 {
+  
   position: absolute;
   bottom: 0;
   width: 100%;

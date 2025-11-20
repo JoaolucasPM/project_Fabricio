@@ -121,17 +121,20 @@ p {
 }
 
 .contentBoxPG2_P2 h2 {
-  font-size: clamp(1.2rem, 2.5vw, 1.4em);
   letter-spacing: 2px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 1.6rem;
+  font-weight: 600;
 }
 
 .contentBoxPG2_P2 p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  
+  width: 100%;
+  text-align: center;
 }
 
 #imgPG2_P2 img {
