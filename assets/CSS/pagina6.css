@@ -76,7 +76,8 @@ img {
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px
+  gap: 10px;
+  text-transform: uppercase;
 }
 
 .tags a {
@@ -97,6 +98,7 @@ img {
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 700;
 
+
 }
 
 .mentor-description {
@@ -110,7 +112,7 @@ img {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px
+  gap: 10px;
 }
 
 .specialties li a {

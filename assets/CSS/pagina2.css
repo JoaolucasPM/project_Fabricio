@@ -55,7 +55,8 @@ p {
 }
 
 /* links2 */
-.links2 {
+.links2 
+{
   margin-top: 40px;
   display: flex;
   flex-wrap: nowrap;
@@ -71,13 +72,13 @@ p {
   backdrop-filter: blur(2px);
   border-radius: 73px;
   color: white;
-  padding: 5px 10px;
+  padding: 10px 20px;
   text-decoration: none;
   white-space: nowrap
 }
 
 .links2 a iconify-icon {
-  margin-right: 8px
+  margin-right: 5px
 }
 
 /* Cards */
