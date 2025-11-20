@@ -5,6 +5,10 @@
   padding: 0
 }
 
+html, body {
+  overflow-x: hidden; /* IMPEDIR CORTE LATERAL */
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: #000;
@@ -15,43 +19,39 @@ img {
   max-width: 100%;
   height: auto
 }
+
 h1,
 h2,
-p{ 
-    font-size: 1.7rem;
+p { 
+  font-size: 1.7rem;
   font-weight: 400;
   background: linear-gradient(to right, #fff, #999);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-
 #caixaPG5_P5 > h1 {
-      text-align: center;
-    padding-bottom: clamp(15px, 2vh, 20px);
-    margin: auto;
-    width: 80%;
+  text-align: center;
+  padding-bottom: clamp(15px, 2vh, 20px);
+  margin: auto;
+  width: 80%;
   font-size: clamp(1.8rem, 5vw, 4.25rem);
 }
 
 #caixaPG5_P5 > p {
   text-align: center;
-
-    padding-top: 30px;
-    padding-bottom: 80px;
-    width: 70%;
-    margin: auto
-
+  padding-top: 30px;
+  padding-bottom: 80px;
+  width: 70%;
+  margin: auto
 }
 
 /* wrap */
 .wrap-blocos_P5 {
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: end;
 }
-
-
 
 /* gallery-1 */
 .gallery-1 {
@@ -63,11 +63,13 @@ p{
   margin: 0 auto;
   margin-top: 10%;
 }
+
 .infoTextPG5_P5 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
+
 #caixaPG5_P5 {
   text-align: center;
 }
@@ -85,6 +87,7 @@ p{
   white-space: nowrap;
   justify-content: center;
 }
+
 .links5 {
   padding: 40px;
   display: flex;
@@ -92,8 +95,6 @@ p{
   gap: 10px;
   justify-content: center;
 }
-
-
 
 .links5 a iconify-icon {
   margin-right: 8px;
@@ -113,7 +114,6 @@ p{
   position: relative;
   height: 350px;
   overflow: visible;
-
 }
 
 .a-text {
@@ -121,12 +121,13 @@ p{
   z-index: 2
 }
 
-.a-text>p {
+.a-text > p {
   padding-bottom: 15px;
   max-width: 50%;
   font-size: 1.5rem
 }
-.a-text>h1 {
+
+.a-text > h1 {
   font-size: 2.4rem;
 }
 
@@ -147,7 +148,8 @@ p{
 /* B */
 .b {
   grid-area: b;
-  background: linear-gradient(179deg, rgba(0, 0, 0, 0.3), #141414), url('/assets/IMG/heroG2.png') center/cover no-repeat;
+  background: linear-gradient(179deg, rgba(0, 0, 0, 0.3), #141414), 
+              url('/assets/IMG/heroG2.png') center/cover no-repeat;
   border-radius: 10px;
   padding: 20px;
   display: flex;
@@ -155,11 +157,11 @@ p{
   color: #fff
 }
 
-.b-text>h1 {
+.b-text > h1 {
   font-size: 2.4rem;
 }
 
-.b-text>p {
+.b-text > p {
   font-size: 1.5rem;
   padding-bottom: 10px
 }
@@ -200,7 +202,8 @@ p{
 /* D */
 .d {
   grid-area: d;
-  background: linear-gradient(179deg, rgba(0, 0, 0, 0.3) 3.38%, #141414 99.16%), url('/assets/IMG/UC_fundo.jpg') center 17%/cover no-repeat;
+  background: linear-gradient(179deg, rgba(0, 0, 0, 0.3) 3.38%, #141414 99.16%), 
+              url('/assets/IMG/UC_fundo.jpg') center 17%/cover no-repeat;
   border: 1px solid rgba(80, 80, 80, 0.5);
   display: flex;
   align-items: center;
@@ -221,7 +224,7 @@ p{
   font-size: 2rem;
 }
 
-.d-text>p {
+.d-text > p {
   font-size: 1.4rem;
   padding-bottom: 15px;
   max-width: 80%
@@ -240,7 +243,6 @@ p{
 }
 
 /* links */
-
 .links-11 {
   margin-top: 3px;
   display: flex;
@@ -259,7 +261,7 @@ p{
   gap: 10px;
   justify-content: space-between;
   width: 100%;
-  max-width: 110%;
+  max-width: 110%; /* CAUSAVA overflow */
   overflow: hidden;
 }
 
@@ -286,13 +288,12 @@ p{
 
 /* MOBILE */
 @media (max-width: 700px) {
-#full{
-  display: none;
-}
-#mobile{
-  display: flex;
-}
+
+  #full { display: none; }
+  #mobile { display: flex; }
+   
   .gallery-1 {
+    display: block;
     width: 100%;
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -300,85 +301,101 @@ p{
       "b"
       "c"
       "d";
-    padding: 0 3px;
+    padding: 30px;
+    overflow-x: hidden;
   }
-  .a{
-    grid-area: a;
-    display: flex;
-    flex-direction: row;
+
+  .a {
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-
-  }
-  #caixaPG5_P5 > h1 {
-  font-size: clamp(1.8rem, 5vw, 4.25rem);
-  padding-bottom: 20px;
-}
-
-#caixaPG5_P5 > p {
-  padding-bottom: 40px;
-  margin-bottom: 20px;
-  width: 96%;
-  font-size: 1.2rem;
-  display: flex;
-  margin: 0 auto;
-
-}
-.a-img img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-}
-.a-text{
+    justify-content: center;
+    height: auto;
+    text-align: center;
   
-  flex: 1;
   }
-.a-text > p {
-  max-width: 100%;
-  font-size: 1rem;
-  padding-bottom:30px ;
-}
+  .a,.b, .c, .d{
+    margin-top: 7px;
+  }
 
-.links-1, .links-11 {
-  margin-top: 3px;
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 10px;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-}
+  .a-text > h1 {
+    font-size: 1.5rem;
+    text-align: left;
+    padding-bottom: 10px ;
+  }
+  .b-text > h1{
+    font-size: 1.5rem;
+    margin-bottom: 10px;  
+  }
+  .c-text > h1{
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 10px;  
+  }
+  .d-text > h1{
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 10px;  
+  }
+  .links-11, .links-1 {
+    padding-top: 10px;
+    display: block;
+  }
+  
+  
+  .a-text > p {
+    margin: 0 auto;
+    max-width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+  }
+  .b-text > p {
+    width: 85%;
+    max-width: 100%;
+    font-size: 1.2rem;
+  }
+  .c-text > p {
+    text-align: left;
+    max-width: 100%;
+    font-size: 1.2rem;
+  }
+  .d-text > p {
+    text-align: left;
+    max-width: 100%;
+    font-size: 1.2rem;
+  }
 
+  .a-img img {
+    max-width: 83%;
+    height: auto;
+    margin-top: 20px;
+  }
 
-.c {
-  grid-area: c;
-  background: linear-gradient(179deg, rgba(0, 0, 0, 0.3), #141414),
-    url('/assets/IMG/heroCard.png') top center/cover no-repeat;
-  border-radius: 10px;
-  padding: 20px;
-  height: 320px;
-  display: flex;
-  align-items: flex-end;
-  color: #fff;
-}
+  .links-1,
+  .links-11 {
+    max-width: 100% !important;
+    overflow: hidden;
+  }
 
-.c-img > img{
-  display: none;
-}
-.c {
-  display: flex;
-  flex-direction: column; 
-  justify-content: center; /* CENTRALIZA VERTICALMENTE */
-  align-items: center;  
+  .c {
+    flex-direction: column;
+    height: auto;
+    padding: 25px;
+    text-align: center;
+  }
 
-}
+  .c-img img {
+    display: none;
+  }
 
-.c-text > h1 {
-  margin-top:25% ;
+  .d {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
 
-
-}
-
-
+  .d-img img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
 }

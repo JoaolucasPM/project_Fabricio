@@ -123,7 +123,7 @@ p {
   position: absolute;
   
   left: 80%;
-  top: 15%;
+  top: 8%;
   transform: translateY(-50%);
   z-index: 1;
   /* Garante que não sobreponha o conteúdo principal */

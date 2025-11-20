@@ -179,6 +179,14 @@ p {
   justify-content: center;
   display: flex;
 }
+
+#imgPG2_P2 img {
+    border: 1px solid green;
+    width: 109%;
+    height: 100%;
+    margin: -22px auto;
+    display: block;
+}
   
 
 
